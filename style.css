@@ -1,5 +1,4 @@
-body {
-  width: auto;
+body, #desktop{
   margin: auto;
   min-width: 360px;
 
@@ -11,6 +10,11 @@ body {
 }
 .bloc-section {
   padding: 30px 0 30px 0;
+}
+@media screen and (min-width: 1300px){
+  #desktop{
+    width: 90%;
+  }
 }
 /* HEADER */
 /* NAVIGATION */
@@ -273,7 +277,7 @@ form button {
 .lodging-marseille-title h3,
 .popular-title h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
 }
 .lodging-marseille-title p,
 .popular-title p {
@@ -281,6 +285,24 @@ form button {
   margin: 0;
   margin-top: 5px;
 }
+/* RESPONSIVE LODGING */
+@media screen and (min-width: 1300px){
+  #lodging{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 65% 30%;
+    grid-column-gap: 5%;
+  }
+  #lodging-popular {
+    order: 2;
+  }
+  #lodging-marseille{
+    background-color: #f2f2f2;
+  }
+}
+/* END RESPONSIVE LODGING */
+
 /* LODGING POPULAR */
 #lodging-popular {
   background-color: #f2f2f2;
@@ -306,15 +328,15 @@ form button {
 #link-popular a img {
   float: left;
   object-fit: cover;
-  width: 120px;
+  width: 45%;
   height: 120px;
-  min-width: 150px;
   border-radius: 20px 0 0 20px;
 }
 .popular-title {
   position: relative;
   margin: 5px;
   padding-left: 10px;
+  width: 50%;
 }
 .popular-title span {
   position: absolute;
@@ -324,7 +346,75 @@ form button {
   font-size: 12px;
 }
 /* END LODGING POPULAR */
-
+/* LODGING POPULAR RESPONSIVE */
+@media screen and (min-width: 600px){
+  #link-popular a img{
+    width: 55%;
+  }
+  .popular-title {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 850px){
+  #link-popular a {
+    justify-content: space-between;
+    height: auto;
+  }
+  #link-popular a img {
+    width: 65%;
+    height: auto;
+    max-height: 150px;
+  }
+  .popular-title{
+    width: 30%;
+    margin: 10px;
+  }
+  .popular-title h3{
+    font-size: 17px;
+  }
+  .popular-title p{
+     font-size: 15px;
+  }
+  .popular-title span{
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 850px) and (max-width: 1300px){
+   #link-popular{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-column-gap: 5%;
+    height: 500px;
+  }
+  #link-popular a {
+    flex-direction: column;
+    margin:0;
+    padding:2px;
+    height: 450px;
+    border-radius: 20px 20px 0 0;
+  }
+  #link-popular a img {
+    width: auto;
+    height: 270px;
+    border-radius: 20px 20px 0 0;
+  }
+  .popular-title {
+    padding: 20px;
+    width: auto;
+    height: 100%;
+  }
+  .popular-title h3{
+    font-size: 17px;
+  }
+  .popular-title p{
+     font-size: 15px;
+  }
+  .popular-title span {
+    bottom: 20px;
+    font-size: 13px;
+  }
+}
+/* END LODGING POPULAR RESPONSIVE */
 /* LODGING MARSEILLE */
 #lodging-marseille {
   order: 2;
@@ -332,15 +422,14 @@ form button {
 #lodging-marseille a {
   display: flex;
   flex-direction: column;
-
-  height: 200px;
+  height: 190px;
   padding: 5px;
   margin-top: 10px;
 
   text-decoration: none;
   color: black;
   border-radius: 20px;
-  box-shadow: 1px 1px 1px 1px#f2f2f2;
+  box-shadow: 1px 1px #f2f2f2, -1px 0 #f2f2f2;
 }
 #lodging-marseille a img {
   height: 120px;
@@ -357,11 +446,25 @@ form button {
   font-size: 10px;
 }
 /* END LODGING MARSEILLE */
-
-/* LODGING RESPONSIVE */
-@media screen and (min-width: 450px) and (max-width: 1150px) {
+/* LODGING MARSEILLE RESPONSIVE */
+@media screen and (min-width: 500px) {
+  #link-marseille {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  #lodging-marseille a {
+    width: 45%;
+    height: auto;
+  }
 }
-/* END LODGING RESPONSIVE */
+@media screen and (min-width: 900px){
+   #lodging-marseille a {
+    width: 30%;
+  }
+}
+/* END LODGING MARSEILLE RESPONSIVE */
 /* END LODGING */
 
 /* ACTIVITIES */
@@ -387,7 +490,7 @@ form button {
   margin: 0;
 }
 /* ACTIVITIES RESPONSIVE */
-@media screen and (min-width: 450px) and (max-width: 1150px) {
+@media screen and (min-width: 450px) and (max-width: 1300px) {
   #article-activities {
     display: flex;
     flex-wrap: wrap;
@@ -400,7 +503,7 @@ form button {
     height: 200px;
   }
 }
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1300px) {
   #article-activities {
     display: grid;
     grid-template-columns: repeat(4, 23.5%);
@@ -454,5 +557,12 @@ footer ul {
 }
 footer ul li {
   margin-top: 10px;
+}
+/* FOOTER RESPONSIVE */
+@media screen and (min-width: 800px){
+  footer .bloc-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 /* END FOOTER */
